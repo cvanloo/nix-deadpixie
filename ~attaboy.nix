@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  vim-simple-dark = import ./vim-simple-dark.nix { inherit pkgs; };
+in
 {
   home.username = "attaboy";
   home.homeDirectory = "/home/attaboy";
@@ -14,7 +17,7 @@
   programs.vim = {
     enable = true;
     defaultEditor = true;
-    plugins = with pkgs.vimPlugins; [ vim-fugitive vim-surround tabular ];
+    plugins = with pkgs.vimPlugins; [ vim-fugitive vim-surround tabular vim-simple-dark ];
     extraConfig = builtins.readFile ./vimrc;
   };
 }
