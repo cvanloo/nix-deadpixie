@@ -106,7 +106,6 @@ in
     rsync
     kitty
     dmenu
-    atkinson-hyperlegible
   ];
 
   fonts = {
@@ -116,6 +115,7 @@ in
       noto-fonts
       jetbrains-mono
       berkeley-mono-typeface
+      atkinson-hyperlegible
     ];
   };
 
