@@ -10,7 +10,7 @@ in
     ];
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
+  boot.loader.timeout = 10;
   boot.loader.systemd-boot = {
     enable = true;
     editor = true;
