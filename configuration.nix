@@ -107,6 +107,7 @@ in
     kitty
     dmenu
     home-manager
+    (import ./dwmstatus.nix {})
   ];
 
   fonts = {
