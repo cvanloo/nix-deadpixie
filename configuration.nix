@@ -83,6 +83,8 @@ in
     ];
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   programs.firefox.enable = true;
   programs.i3lock.enable = true;
   programs.vim = {
