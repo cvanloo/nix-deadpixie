@@ -106,6 +106,7 @@ in
     rsync
     kitty
     dmenu
+    home-manager
   ];
 
   fonts = {
