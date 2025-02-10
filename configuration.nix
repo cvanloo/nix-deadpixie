@@ -82,7 +82,10 @@
 
   programs.firefox.enable = true;
   programs.i3lock.enable = true;
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+      enabled = true;
+      defaultEditor = true;
+  };
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -98,7 +101,22 @@
     rsync
     kitty
     dmenu
+    atkinson-hyperlegible
   ];
+
+  let
+    berkeley-mono-typeface = pkgs.callPackage ./berkeley-mono.nix { inherit pkgs };
+  in
+
+  fonts = {
+    fontDir.enable = true;
+    enableGhostscriptFonts = true;
+    packages = with pkgs; [
+      noto-fonts
+      jetbrains-mono
+      berkeley-mono-typeface
+    ];
+  };
 
   # /run/current-system/configuration.nix
   system.copySystemConfiguration = true;
