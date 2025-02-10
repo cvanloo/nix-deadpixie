@@ -47,7 +47,7 @@
     windowManager.dwm = {
       enable = true;
       package = pkgs.dwm.overrideAttrs {
-        src = ./dwm/;
+        src = ./dwm;
       };
     };
     xkb = {
@@ -76,7 +76,7 @@
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
-      kitty
+      home-manager
     ];
   };
 
@@ -96,6 +96,8 @@
     curl
     git
     rsync
+    kitty
+    dmenu
   ];
 
   # /run/current-system/configuration.nix
