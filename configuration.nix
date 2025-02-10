@@ -47,7 +47,7 @@
     windowManager.dwm = {
       enable = true;
       package = pkgs.dwm.overrideAttrs {
-        src = ./dwm-6.5/;
+        src = ./dwm/;
       };
     };
     xkb = {
