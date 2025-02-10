@@ -81,6 +81,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.i3lock.enable = true;
   programs.vim.defaultEditor = true;
   programs.gnupg.agent = {
     enable = true;
@@ -89,6 +90,7 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    i3lock
     vim
     wget
     curl
