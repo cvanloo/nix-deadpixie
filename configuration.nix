@@ -83,7 +83,7 @@
   programs.firefox.enable = true;
   programs.i3lock.enable = true;
   programs.vim = {
-      enabled = true;
+      enable = true;
       defaultEditor = true;
   };
   programs.gnupg.agent = {
