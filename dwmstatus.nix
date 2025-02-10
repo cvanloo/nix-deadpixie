@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation {
     pname = "dwmstatus";
-    version "1";
+    version = "1";
     src = ./dwmstatus.janet;
     nativeBuildInputs = [ pkgs.janet ];
     installPhase = ''
