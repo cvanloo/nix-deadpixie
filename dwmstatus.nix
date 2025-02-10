@@ -1,15 +1,16 @@
-{ pkgs }:
+{ pkgs ? import <nixpkgs> {} }:
 
-pkgs.stdenv.mkDerivation {
+let
+  janetScript = builtins.path { path = ./dwmstatus.janet; };
+in pkgs.stdenv.mkDerivation {
     pname = "dwmstatus";
     version = "1";
     src = ./dwmstatus.janet;
     nativeBuildInputs = [ pkgs.janet ];
+    phases = [ "installPhase" ];
     installPhase = ''
-      runHook preInstall
       mkdir -p $out/bin
-      cp dwmstatus.janet $out/bin/dwmstatus
+      cp ${janetScript} $out/bin/dwmstatus
       chmod +x $out/bin/dwmstatus
-      runHook postInstall
     '';
 }
