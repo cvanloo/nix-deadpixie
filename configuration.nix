@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let
+  berkeley-mono-typeface = pkgs.callPackage ./berkeley-mono.nix { inherit pkgs; };
+in
 {
   imports =
     [
@@ -103,10 +106,6 @@
     dmenu
     atkinson-hyperlegible
   ];
-
-  let
-    berkeley-mono-typeface = pkgs.callPackage ./berkeley-mono.nix { inherit pkgs };
-  in
 
   fonts = {
     fontDir.enable = true;
